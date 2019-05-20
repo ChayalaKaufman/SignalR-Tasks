@@ -1,0 +1,46 @@
+﻿@using RealTimeTasks.Data
+@model IndexViewModel
+<div class="row">
+    <input type="text" class="form-control" id="job-name" placeholder="Enter new job here" />
+    <button class="btn btn-primary" id="add">Add Job</button>
+</div>
+<input type="hidden" id="user-name" value="@Model.User.Name" />
+<input type="hidden" id="user-id" value="@Model.User.Id" />
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (Job job in Model.Jobs)
+    {
+        <tr>
+            <td>@job.Name</td>
+            <td>
+                @if (job.Status == Status.Incomplete)
+                {
+                    <button data-job-id="@job.Id" class="btn btn-info incomplete">I'm doing this one!</button>
+                }
+                else if (job.Status == Status.Taken)
+                {
+                    if (job.UserId == Model.User.Id)
+                    {
+                        <button data-job-id="@job.Id" class="btn btn-success my-job">I'm done!</button>
+                    }
+                    else
+                    {
+                        <button data-job-id="@job.Id" disabled class="btn btn-warning job-taken">Job taken by @job.User.Name</button>
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+
+@section scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aspnet-signalr/1.1.4/signalr.min.js"></script>
+    <script src="/js/index.js"></script>
+}

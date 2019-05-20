@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeTasks.Web", "RealTimeTasks.Web\RealTimeTasks.Web.csproj", "{C66015EF-FC1D-4EC0-9EC1-3498EFF4C831}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeTasks.Data", "RealTimeTasks.Data\RealTimeTasks.Data.csproj", "{9382FD31-C3D3-4471-99C5-AA76DDF231CD}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C66015EF-FC1D-4EC0-9EC1-3498EFF4C831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66015EF-FC1D-4EC0-9EC1-3498EFF4C831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66015EF-FC1D-4EC0-9EC1-3498EFF4C831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66015EF-FC1D-4EC0-9EC1-3498EFF4C831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9382FD31-C3D3-4471-99C5-AA76DDF231CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9382FD31-C3D3-4471-99C5-AA76DDF231CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9382FD31-C3D3-4471-99C5-AA76DDF231CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9382FD31-C3D3-4471-99C5-AA76DDF231CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
