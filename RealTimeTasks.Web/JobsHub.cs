@@ -14,6 +14,7 @@ namespace RealTimeTasks.Web
         public int UserId { get; set; }
         public int JobId { get; set; }
     }
+
     public class JobsHub : Hub
     { 
         private string _connectionString;
@@ -43,7 +44,7 @@ namespace RealTimeTasks.Web
         {
            Job job = _db.AssignJob(uja.JobId, uja.UserId);
             
-           Clients.Others.SendAsync("JobTaken", job);
+           Clients.Others.SendAsync("JobTaken", job).Wait();
             
            Clients.Caller.SendAsync("MyJob", job);
         }
@@ -58,7 +59,7 @@ namespace RealTimeTasks.Web
 
         public void Logout()
         {
-            //log them out - how??
+            //log them out - how?
         }
     }
 }

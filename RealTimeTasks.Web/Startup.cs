@@ -48,11 +48,12 @@ namespace RealTimeTasks.Web
             }
             
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseSignalR(routes =>
             {
                 routes.MapHub<JobsHub>("/jobsHub");
             });
-            app.UseAuthentication();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

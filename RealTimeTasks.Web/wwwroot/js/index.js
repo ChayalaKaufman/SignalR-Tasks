@@ -22,7 +22,7 @@
         connection.invoke("TakeJob", { jobId, userId });
     });
 
-    connection.on("JobTaken", job => {
+    connection.on('JobTaken', function (job) {
         const button = $(`[data-job-id=${job.id}]`);
         button.text(`Job taken by ${job.user.name}`);
         button.removeClass('btn-info incomplete');
@@ -30,7 +30,8 @@
         button.prop('disabled', true);
     });
 
-    connection.on("MyJob", job => {
+    connection.on('MyJob', function (job) {
+        console.log(job);
         const button = $(`[data-job-id=${job.id}]`);
         button.removeClass('btn-info incomplete');
         button.addClass('btn-success my-job');

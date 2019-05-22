@@ -35,7 +35,6 @@ namespace RealTimeTasks.Web.Controllers
                 return RedirectToAction("Login");
             }
 
-            //this code is conceptually the same as FormsAuthentication.SetAuthCookie()
             var claims = new List<Claim>
             {
                 new Claim("user", email)
